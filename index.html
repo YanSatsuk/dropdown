@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Select component styles -->
+    <link rel="stylesheet" href="select/select.css">
+</head>
+<body>
+
+<div class="wrap">
+
+    <div class="settings">
+        <h2>Действия</h2>
+        <ul id="actions">
+            <li>
+                <button data-type="open">Открыть</button>
+            </li>
+            <li>
+                <button data-type="close">Закрыть</button>
+            </li>
+            <li>
+                <button data-type="set">Выбрать 5 индекс</button>
+            </li>
+            <li>
+                <button data-type="get">Получить выбранный</button>
+            </li>
+            <li>
+                <button data-type="clear">Очистить</button>
+            </li>
+            <li>
+                <button data-type="destroy">Уничтожить</button>
+            </li>
+        </ul>
+
+        <p id="log"></p>
+    </div>
+
+    <div id="select"></div>
+
+</div>
+
+<!-- Select component template -->
+<template id="select-template">
+    <div class="select-component" id="select-component">
+        <div class="select-component--wrapper">
+            <input type="text" name="item" id="select-component--input" class="select-component--input" value=""
+                   readonly>
+            <label for="select-component--input" class="select-component--label" id="select-component--label">
+                Select
+            </label>
+            <button class="select-component--dropdown-icon"></button>
+        </div>
+        <div class="select-component--dropdown" id="select-component--dropdown">
+            <div class="select-component--spinner" id="select-component--spinner"></div>
+            <ul class="select-component--options" id="select-component--options"></ul>
+        </div>
+    </div>
+</template>
+<!-- Template end -->
+
+<!-- Import select component -->
+<script src="select/select.js"></script>
+</body>
+</html>

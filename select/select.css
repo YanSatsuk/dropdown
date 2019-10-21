@@ -1,0 +1,139 @@
+.select-component {
+    position: relative;
+}
+
+.select-component--dropdown-icon {
+    background-image: url(svg/arrow.svg);
+    background-size: 16px;
+    height: 16px;
+    width: 16px;
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 4px;
+    right: 0;
+    outline: none;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.select-component--input {
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    padding: 5px 20px 5px 0;
+    width: 300px;
+    cursor: pointer;
+}
+
+.select-component--input:hover {
+    border-bottom: 1px solid black;
+}
+
+.select-component--wrapper:focus-within .select-component--dropdown-icon {
+    transform: rotate(270deg);
+}
+
+.select-component--wrapper {
+    position: relative;
+}
+
+.select-component--label {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.select-component--label__empty_input {
+    top: -14px;
+    left: 10px;
+    font-size: 12px;
+    color: grey;
+}
+
+.select-component--label__selected_item {
+    top: -14px;
+    left: 10px;
+    font-size: 12px;
+    color: mediumblue;
+}
+
+.select-component--dropdown {
+    width: 300px;
+    height: 200px;
+    overflow-y: auto;
+    padding: 5px 0;
+    display: none;
+    position: absolute;
+    top: 32px;
+    box-shadow: 0 1px 3px 0 grey;
+    animation: fade-in 0.5s;
+}
+
+.select-component--dropdown__show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.select-component--spinner {
+    background-image: url("svg/loading.svg");
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+.select-component--spinner__hide {
+    display: none;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.select-component--options {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.select-component--options__show {
+    display: block;
+}
+
+.select-component--item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-component--item__selected {
+    color: mediumblue;
+}
+
+.select-component--item:hover {
+    background-color: whitesmoke;
+}
